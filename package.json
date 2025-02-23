@@ -20,6 +20,7 @@
     "ci": "pnpm run build && pnpm run format:check && pnpm run typecheck && pnpm run lint",
     "dev": "vite",
     "build": "tsup",
+    "build:app": "vite build --config vite-app.config.ts",
     "lint": "eslint src/lib",
     "format:check": "prettier --check src/lib",
     "typecheck": "tsc",
