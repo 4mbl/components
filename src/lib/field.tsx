@@ -64,16 +64,16 @@ export default function Field(props: FieldProps) {
     (props.type === 'email'
       ? 'jane.doe@example.com'
       : props.type === 'password'
-      ? (props.password?.placeholderChar ?? '•').repeat(minLength)
-      : 'Type something');
+        ? (props.password?.placeholderChar ?? '•').repeat(minLength)
+        : 'Type something');
 
   const label =
     props.children ??
     (props.type === 'email'
       ? 'Email'
       : props.type === 'password'
-      ? 'Password'
-      : '');
+        ? 'Password'
+        : '');
 
   const fieldState = props.disableFieldStateColors
     ? ''
@@ -87,18 +87,19 @@ export default function Field(props: FieldProps) {
           'py-1 px-2 border-0 rounded outline-2 ',
           props.colors?.background ?? 'bg-slate-900',
           props.colors?.outline ?? 'outline-slate-400',
-          fieldState
+          fieldState,
         )}
         pattern={
           props.pattern || props.type === 'email'
-            ? props.pattern ?? EMAIL_REGEX
+            ? (props.pattern ?? EMAIL_REGEX)
             : undefined
         }
         required={props.required ?? true}
         minLength={minLength}
         placeholder={placeholder}
         id={id}
-        type={props.type}></input>
+        type={props.type}
+      ></input>
     </div>
   );
 }
