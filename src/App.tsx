@@ -1,6 +1,5 @@
-import './App.css';
-import Field from './components/field';
-import Form from './components/form';
+import Field from './lib/field';
+import Form from './lib/form';
 
 function App() {
   return (
