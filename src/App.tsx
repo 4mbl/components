@@ -1,5 +1,4 @@
-import Field from './lib/field';
-import Form from './lib/form';
+import { Field, Form } from './lib';
 
 function App() {
   return (
