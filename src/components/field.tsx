@@ -1,4 +1,5 @@
 import colors from 'tailwindcss/colors';
+import { cn } from '../utils';
 
 type AutoCompletable = string & {};
 
@@ -54,7 +55,7 @@ const EMAIL_REGEX = '[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}' as const;
  * - email address basic validation
  * - password length validation
  */
-function Field(props: FieldProps) {
+export default function Field(props: FieldProps) {
   const id = props.id ?? 'input-' + Math.random().toString(36).slice(2);
   const minLength = props.type === 'password' ? MIN_PASSWORD_LENGTH : 0;
 
@@ -76,17 +77,18 @@ function Field(props: FieldProps) {
 
   const fieldState = props.disableFieldStateColors
     ? ''
-    : '[&:not(:placeholder-shown)]:valid:outline-green-400 [&:not(:placeholder-shown)]:invalid:outline-red-400 focus:invalid:outline-yellow-400';
+    : 'not-placeholder-shown:valid:outline-green-400 not-placeholder-shown:invalid:outline-red-400 focus:invalid:outline-yellow-400';
 
   return (
-    <div className={'grid gap-1' + props.className}>
+    <div className={cn('grid gap-1', props.className)}>
       <label htmlFor={id}>{label}</label>
       <input
-        className={`${
-          props.colors?.background ?? 'bg-slate-900'
-        } py-1 px-2 border-0 rounded outline outline-2 ${
-          props.colors?.outline ?? 'outline-slate-400'
-        } ${fieldState}`}
+        className={cn(
+          'py-1 px-2 border-0 rounded outline-2 ',
+          props.colors?.background ?? 'bg-slate-900',
+          props.colors?.outline ?? 'outline-slate-400',
+          fieldState
+        )}
         pattern={
           props.pattern || props.type === 'email'
             ? props.pattern ?? EMAIL_REGEX
@@ -100,5 +102,3 @@ function Field(props: FieldProps) {
     </div>
   );
 }
-
-export default Field;
