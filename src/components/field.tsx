@@ -76,7 +76,7 @@ function Field(props: FieldProps) {
 
   const fieldState = props.disableFieldStateColors
     ? ''
-    : '[&:not(:placeholder-shown)]:valid:outline-green-400 [&:not(:placeholder-shown)]:invalid:outline-red-400 focus:invalid:outline-yellow-400';
+    : 'not-placeholder-shown:valid:outline-green-400 not-placeholder-shown:invalid:outline-red-400 focus:invalid:outline-yellow-400';
 
   return (
     <div className={'grid gap-1' + props.className}>
