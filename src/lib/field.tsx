@@ -1,5 +1,5 @@
 import colors from 'tailwindcss/colors';
-import { cn } from '../utils';
+import { cn } from './utils';
 
 type AutoCompletable = string & {};
 
