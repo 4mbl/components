@@ -1,5 +1,6 @@
 import colors from 'tailwindcss/colors';
 import { cn } from './utils';
+import { useId } from 'react';
 
 type AutoCompletable = string & {};
 
@@ -56,7 +57,8 @@ const EMAIL_REGEX = '[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}' as const;
  * - password length validation
  */
 export default function Field(props: FieldProps) {
-  const id = props.id ?? 'input-' + Math.random().toString(36).slice(2);
+  const fallbackId = useId();
+  const id = props.id ?? fallbackId;
   const minLength = props.type === 'password' ? MIN_PASSWORD_LENGTH : 0;
 
   const placeholder =
@@ -99,7 +101,7 @@ export default function Field(props: FieldProps) {
         placeholder={placeholder}
         id={id}
         type={props.type}
-      ></input>
+      />
     </div>
   );
 }
