@@ -22,12 +22,12 @@ A collection of React components proven useful across various projects
     import { Form, Field } from '@4mbl/components';
 
     export default function Page() {
-    return (
+      return (
         <Form>
-        <Field type="email"/>
-        <Field type="password"/>
+          <Field type="email"/>
+          <Field type="password"/>
         </Form>
-    );
+      );
     }
     ```
 
