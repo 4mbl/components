@@ -8,6 +8,9 @@
     "./.css": "./dist/assets/components.css"
   },
   "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist"
   ],
