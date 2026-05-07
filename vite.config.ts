@@ -4,14 +4,18 @@ import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import dts from 'vite-plugin-dts';
+import dts from 'unplugin-dts/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    dts({ include: ['src/lib'], tsconfigPath: './tsconfig.build.json' }),
+    dts({
+      include: ['src/lib'],
+      tsconfigPath: './tsconfig.build.json',
+      outDirs: 'dist/types',
+    }),
   ],
   build: {
     lib: {
