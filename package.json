@@ -25,8 +25,9 @@
     "build:app": "vite build --config vite-app.config.ts",
     "lint": "eslint src/lib",
     "format:check": "prettier --check src/lib",
+    "format:write": "prettier --write src/lib",
     "typecheck": "tsc",
-    "preview": "vite preview",
+    "preview:app": "vite preview",
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "pnpm run ci"
   },
