@@ -66,13 +66,19 @@
     "unplugin-dts": "^1.0.3",
     "vite": "^8.2.1"
   },
-  "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": "24.x"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.x",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.5.0",
+      "onFail": "download"
+    }
   }
 }
