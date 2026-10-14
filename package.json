@@ -17,12 +17,15 @@
   "license": "MIT",
   "author": "4mbl",
   "homepage": "https://github.com/4mbl/components/#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4mbl/components.git"
+  },
   "keywords": [
     "react",
     "components"
   ],
   "scripts": {
-    "ci": "pnpm run build && pnpm run format:check && pnpm run typecheck && pnpm run lint",
     "dev": "vite",
     "build": "vite build --config vite.config.ts",
     "build:app": "vite build --config vite-app.config.ts",
@@ -31,8 +34,7 @@
     "format:write": "prettier --write src/lib",
     "typecheck": "tsc",
     "preview:app": "vite preview",
-    "local-release": "changeset version && changeset publish",
-    "prepublishOnly": "pnpm run ci"
+    "release": "pnpm run build && changeset publish"
   },
   "peerDependencies": {
     "react": "^19",
