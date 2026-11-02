@@ -13,6 +13,6 @@ on:
 jobs:
   ci:
     name: Node.js
-    uses: 4mbl/actions/.github/workflows/ci-node-pnpm.yaml@57b1db6e95fa6cedea8d3270f3f4142fba10c63b # ci-node-pnpm/v26.9.0
+    uses: 4mbl/actions/.github/workflows/ci-node-pnpm.yaml@03700d1eb848ad021f01b37ebbee5290afdcea84 # ci-node-pnpm/v26.10.0
     with:
       disable-steps: '[]'
